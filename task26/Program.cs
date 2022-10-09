@@ -14,6 +14,8 @@ int GetNumber()
 
 string ConvertIntoBinary(int number)
 {
+    if (number == 0)
+        return "0";
     int leftover = number % 2;
     string leftoverStr = string.Empty;
     while (number >= 1)
@@ -21,7 +23,7 @@ string ConvertIntoBinary(int number)
         leftover = number % 2;
         number = number / 2;
         leftoverStr += leftover.ToString();
-    }   
+    }
     return ReverseString(leftoverStr);
 }
 
